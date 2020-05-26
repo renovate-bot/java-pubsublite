@@ -16,6 +16,11 @@
   <description>Beam IO for Google Cloud Pub/Sub Lite</description>
   <dependencies>
     <dependency>
+      <groupId>io.opencensus</groupId>
+      <artifactId>opencensus-api</artifactId>
+      <version>0.26.0</version>
+    </dependency>
+    <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-pubsublite</artifactId>
       <version>0.1.5</version><!-- {x-version-update:google-cloud-pubsublite:current} -->
@@ -23,7 +28,6 @@
     <dependency>
       <groupId>com.google.code.findbugs</groupId>
       <artifactId>jsr305</artifactId>
-      <version>3.0.2</version>
     </dependency>
     <dependency>
       <groupId>org.apache.beam</groupId>
@@ -78,29 +82,6 @@
           <execution>
             <goals>
               <goal>format</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-enforcer-plugin</artifactId>
-        <version>3.0.0-M3</version>
-        <executions>
-          <execution>
-            <id>enforce</id>
-            <configuration>
-              <rules>
-                <requireUpperBoundDeps>
-                  <level>WARN</level>
-                  <excludes>
-                    <exclude>org.checkerframework:checker-compat-qual</exclude>
-                  </excludes>
-                </requireUpperBoundDeps>
-              </rules>
-            </configuration>
-            <goals>
-              <goal>enforce</goal>
             </goals>
           </execution>
         </executions>
